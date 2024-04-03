@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwx6xg5s01r5s"]
+
+[ext_resource type="Script" path="res://Script/PackageManager.gd" id="1_v35xl"]
+
+[node name="PackageManager" type="Node2D"]
+script = ExtResource("1_v35xl")

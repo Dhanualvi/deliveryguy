@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqsk13dg4dd00"]
+
+[ext_resource type="Texture2D" uid="uid://yafx1ssnur2u" path="res://assets/Sprites/flat-dark/flatDark13.png" id="1_o5ia5"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_right = 82.0
+offset_bottom = 23.0
+
+[node name="ScoreLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Score: "
+
+[node name="PointLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Point"
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 10.0
+offset_right = -14.0
+offset_bottom = 66.0
+grow_horizontal = 0
+icon = ExtResource("1_o5ia5")

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://1pyayfdq2sa6"]
+
+[ext_resource type="PackedScene" uid="uid://tvulj27kmmqd" path="res://Scene/package_factory.tscn" id="1_7s0vk"]
+[ext_resource type="PackedScene" uid="uid://dd6ouik756mxb" path="res://Scene/player.tscn" id="1_b15p6"]
+[ext_resource type="PackedScene" uid="uid://c20175v35us64" path="res://Scene/customer.tscn" id="2_fbhto"]
+[ext_resource type="PackedScene" uid="uid://dqsk13dg4dd00" path="res://Scene/ui.tscn" id="3_lg0i8"]
+[ext_resource type="PackedScene" uid="uid://dwx6xg5s01r5s" path="res://Scene/package_manager.tscn" id="5_a2522"]
+
+[node name="DeliveryScene" type="Node2D"]
+
+[node name="PackageFactory" parent="." instance=ExtResource("1_7s0vk")]
+position = Vector2(215, 520)
+
+[node name="Player" parent="." instance=ExtResource("1_b15p6")]
+position = Vector2(610, 501)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.775, 0.775)
+
+[node name="Customer" parent="." instance=ExtResource("2_fbhto")]
+position = Vector2(-843, -44)
+
+[node name="Customer2" parent="." instance=ExtResource("2_fbhto")]
+position = Vector2(1064, -20)
+
+[node name="Customer3" parent="." instance=ExtResource("2_fbhto")]
+position = Vector2(-752, 915)
+
+[node name="Customer4" parent="." instance=ExtResource("2_fbhto")]
+position = Vector2(1153, 871)
+
+[node name="UI" parent="." instance=ExtResource("3_lg0i8")]
+
+[node name="PackageManager" parent="." instance=ExtResource("5_a2522")]
+position = Vector2(610, 501)

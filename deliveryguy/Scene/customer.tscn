@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c20175v35us64"]
+
+[ext_resource type="Script" path="res://Script/customer.gd" id="1_76uit"]
+[ext_resource type="Texture2D" uid="uid://cvqj2c80kuyox" path="res://assets/Tiles/tile_0024.png" id="1_mkjs0"]
+[ext_resource type="Script" path="res://Script/CustomerPacakgeRandomizer.gd" id="2_woar6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ug3ar"]
+radius = 16.6253
+
+[node name="Customer" type="Node2D"]
+script = ExtResource("1_76uit")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.380392, 1, 1)
+scale = Vector2(10, 10)
+texture = ExtResource("1_mkjs0")
+
+[node name="PackageLabel" type="Label" parent="."]
+offset_left = -58.0
+offset_top = -118.0
+offset_right = 60.0
+offset_bottom = -76.0
+theme_override_font_sizes/font_size = 30
+text = "Package"
+script = ExtResource("2_woar6")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Customer"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 11)
+scale = Vector2(4.635, 4.635)
+shape = SubResource("CircleShape2D_ug3ar")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
