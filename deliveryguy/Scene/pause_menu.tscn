@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhqld7j75fd0s"]
+
+[ext_resource type="Script" path="res://Script/pause_menu.gd" id="1_fi50l"]
+[ext_resource type="Texture2D" uid="uid://c3gswuejvs12n" path="res://assets/dark-gray-color-solid-background-1920x1080.png" id="2_trolt"]
+
+[node name="PauseMenu" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fi50l")
+
+[node name="Popup" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Popup"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_trolt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -53.0
+offset_right = 95.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(87, 50.5)
+
+[node name="ResumeButton" type="Button" parent="Popup/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="MainMenuButton" type="Button" parent="Popup/VBoxContainer"]
+layout_mode = 2
+text = "Return to main menu"
+
+[node name="ExitButton" type="Button" parent="Popup/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Popup/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="Popup/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

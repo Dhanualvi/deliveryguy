@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://1pyayfdq2sa6"]
+[gd_scene load_steps=8 format=3 uid="uid://1pyayfdq2sa6"]
 
+[ext_resource type="PackedScene" uid="uid://15n6u8fipfbw" path="res://Scene/audio.tscn" id="1_4gekg"]
 [ext_resource type="PackedScene" uid="uid://tvulj27kmmqd" path="res://Scene/package_factory.tscn" id="1_7s0vk"]
 [ext_resource type="PackedScene" uid="uid://dd6ouik756mxb" path="res://Scene/player.tscn" id="1_b15p6"]
 [ext_resource type="PackedScene" uid="uid://c20175v35us64" path="res://Scene/customer.tscn" id="2_fbhto"]
 [ext_resource type="PackedScene" uid="uid://dqsk13dg4dd00" path="res://Scene/ui.tscn" id="3_lg0i8"]
 [ext_resource type="PackedScene" uid="uid://dwx6xg5s01r5s" path="res://Scene/package_manager.tscn" id="5_a2522"]
+[ext_resource type="PackedScene" uid="uid://c36mq16e3eyek" path="res://Scene/score_manager.tscn" id="7_myfms"]
 
 [node name="DeliveryScene" type="Node2D"]
 
@@ -16,6 +18,9 @@ position = Vector2(610, 501)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.775, 0.775)
+
+[node name="Audio" parent="Player" instance=ExtResource("1_4gekg")]
+position = Vector2(-384, 4)
 
 [node name="Customer" parent="." instance=ExtResource("2_fbhto")]
 position = Vector2(-843, -44)
@@ -33,3 +38,5 @@ position = Vector2(1153, 871)
 
 [node name="PackageManager" parent="." instance=ExtResource("5_a2522")]
 position = Vector2(610, 501)
+
+[node name="ScoreManager" parent="." instance=ExtResource("7_myfms")]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c2u8ispdft00q"]
+
+[node name="LevelTimer" type="Timer"]
+wait_time = 60.0
+one_shot = true
+autostart = true

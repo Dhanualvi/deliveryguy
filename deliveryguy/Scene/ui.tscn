@@ -1,8 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqsk13dg4dd00"]
+[gd_scene load_steps=6 format=3 uid="uid://dqsk13dg4dd00"]
 
+[ext_resource type="Script" path="res://Script/ui.gd" id="1_n60ij"]
 [ext_resource type="Texture2D" uid="uid://yafx1ssnur2u" path="res://assets/Sprites/flat-dark/flatDark13.png" id="1_o5ia5"]
+[ext_resource type="PackedScene" uid="uid://c2u8ispdft00q" path="res://Scene/level_timer.tscn" id="2_o6y4e"]
+[ext_resource type="PackedScene" uid="uid://bhqld7j75fd0s" path="res://Scene/pause_menu.tscn" id="3_t8jc6"]
+[ext_resource type="PackedScene" uid="uid://dgwkawcoa12gc" path="res://Scene/game_over_menu.tscn" id="4_tfooy"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_n60ij")
+
+[node name="LevelTimer" parent="." instance=ExtResource("2_o6y4e")]
+wait_time = 1.0
+one_shot = false
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 82.0
@@ -18,7 +27,26 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Point"
 
-[node name="Button" type="Button" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -146.5
+offset_right = 146.5
+offset_bottom = 69.0
+grow_horizontal = 2
+
+[node name="TimerLabel" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Timer: "
+
+[node name="TimeLabel" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Time"
+
+[node name="PauseButton" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -28,3 +56,11 @@ offset_right = -14.0
 offset_bottom = 66.0
 grow_horizontal = 0
 icon = ExtResource("1_o5ia5")
+
+[node name="PauseMenu" parent="." instance=ExtResource("3_t8jc6")]
+
+[node name="GameOverMenu" parent="." instance=ExtResource("4_tfooy")]
+visible = false
+
+[connection signal="timeout" from="LevelTimer" to="." method="_on_level_timer_timeout"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

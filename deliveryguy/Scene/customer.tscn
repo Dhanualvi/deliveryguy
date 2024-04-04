@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c20175v35us64"]
+[gd_scene load_steps=6 format=3 uid="uid://c20175v35us64"]
 
 [ext_resource type="Script" path="res://Script/customer.gd" id="1_76uit"]
 [ext_resource type="Texture2D" uid="uid://cvqj2c80kuyox" path="res://assets/Tiles/tile_0024.png" id="1_mkjs0"]
 [ext_resource type="Script" path="res://Script/CustomerPacakgeRandomizer.gd" id="2_woar6"]
+[ext_resource type="Script" path="res://Script/Timer.gd" id="4_b7anc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ug3ar"]
 radius = 16.6253
@@ -32,4 +33,10 @@ position = Vector2(0, 11)
 scale = Vector2(4.635, 4.635)
 shape = SubResource("CircleShape2D_ug3ar")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+script = ExtResource("4_b7anc")
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="Timer" to="PackageLabel" method="_on_timer_timeout"]

@@ -6,10 +6,10 @@ uid="uid://os31pdbrwan2"
 
 [deps]
 
-files=["res://resource/packages.Triangle.translation", "res://resource/packages.Circle.translation", "res://resource/packages.Rectangle.translation"]
+files=["res://resource/packages.Triangle.translation", "res://resource/packages.Circle.translation", "res://resource/packages.Rectangle.translation", "res://resource/packages.Octagon.translation", "res://resource/packages.Hexagon.translation", "res://resource/packages.Pentagon.translation"]
 
 source_file="res://resource/packages.csv"
-dest_files=["res://resource/packages.Triangle.translation", "res://resource/packages.Circle.translation", "res://resource/packages.Rectangle.translation"]
+dest_files=["res://resource/packages.Triangle.translation", "res://resource/packages.Circle.translation", "res://resource/packages.Rectangle.translation", "res://resource/packages.Octagon.translation", "res://resource/packages.Hexagon.translation", "res://resource/packages.Pentagon.translation"]
 
 [params]
 

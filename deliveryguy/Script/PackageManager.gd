@@ -2,7 +2,6 @@ extends Node2D
 
 var file = FileAccess.open("res://resource/packages.csv",FileAccess.READ)
 
-
 func _ready():
 	var package_data = import_packages()
 	Signals.emit_signal("package_data_ready", package_data)
